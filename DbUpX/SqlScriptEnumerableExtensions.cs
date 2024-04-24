@@ -105,7 +105,7 @@ namespace DbUpX
 
             void RecursivelyAdd(SqlScript script)
             {
-                if (sorted.Contains(script))
+                if (sorted.Any(s => s.Name == script.Name))
                 {
                     return;
                 }

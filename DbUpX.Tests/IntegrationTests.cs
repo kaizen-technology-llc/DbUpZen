@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using DbUp;
 using DbUp.Engine;
 using FluentAssertions;
@@ -86,6 +87,22 @@ namespace DbUpX.Tests
             return WithDB(ConnectionString, db => db.Query<(string name, string hash)>(
                 @"select ScriptName, ContentsHash from SchemaVersionHash"))
                 .ToDictionary(x => x.name, x => x.hash);
+        }
+
+        [Fact]
+        public void RunsEmbeddedScriptsWithDependencies()
+        {
+            var deployer = DeployChanges.To
+                .SqlDatabase(ConnectionString)
+                .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
+                .LogToConsole()
+                .WithFilter(scripts => scripts
+                    .WithPrefix("DbUpX.Tests.Schema.")
+                    .OrderByDependency("#requires"))
+                .Build();
+
+            deployer.GetScriptsToExecute().Count.Should().Be(3);
+            deployer.PerformUpgrade().Successful.Should().BeTrue();
         }
 
         [Fact]

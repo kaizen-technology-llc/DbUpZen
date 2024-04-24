@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using DbUp;
 using DbUp.Engine;
 using FluentAssertions;
@@ -50,6 +51,21 @@ namespace DbUpZen.Tests
                 end"));
 
             EnsureDatabase.For.SqlDatabase(ConnectionString);
+        }
+
+        [Fact]
+        public void RunsEmbeddedScriptsWithDependencies()
+        {
+          var deployer = DeployChanges.To
+            .SqlDatabase(ConnectionString)
+            .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
+            .LogToConsole()
+            .WithFilter(scripts => scripts
+              .WithPrefix("DbUpZen.Tests.Schema.")
+              .OrderByDependency("#requires"))
+            .Build();
+
+          deployer.GetScriptsToExecute().Count.Should().Be(3);
         }
 
         [Fact]

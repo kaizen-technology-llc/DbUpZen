@@ -25,4 +25,7 @@
       <HintPath>..\DbUp\src\dbup-sqlserver\bin\Debug\netstandard1.3\dbup-sqlserver.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Schema\*.sql" />
+  </ItemGroup>
 </Project>

@@ -68,5 +68,17 @@ namespace DbUpZen.Tests
             executed.Select(s => s.Name).Should().ContainInOrder(
                 "ay", "by", "cy", "ax", "bx", "cx");
         }
+
+        [Fact]
+        public void WithPrefixShouldNotExecuteCodeScript() 
+        {
+            IEnumerable<SqlScript> scripts = new List<SqlScript>
+            {
+                new LazySqlScript("FakeNamespace.FakeCodeScript.cs", new SqlScriptOptions(), () => throw new NotImplementedException())
+            };
+
+            var filteredScripts = scripts.WithPrefix("FakeNamespace.");
+            filteredScripts.Should().HaveCount(1);
+        }
     }
 }

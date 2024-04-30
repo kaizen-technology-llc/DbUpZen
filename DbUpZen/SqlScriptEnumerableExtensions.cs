@@ -28,7 +28,7 @@ namespace DbUpZen
                    let prefix = prefixes.FirstOrDefault(p =>
                         script.Name.StartsWith(p, StringComparison.InvariantCultureIgnoreCase))
                    where prefix != null
-                   select new SqlScript(script.Name.Substring(prefix.Length), script.Contents);
+                   select new LazySqlScript(script.Name.Substring(prefix.Length), () => script.Contents);
         }
 
         /// <summary>

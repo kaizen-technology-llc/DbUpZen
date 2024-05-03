@@ -8,7 +8,7 @@ using DbUp.Engine;
 using FluentAssertions;
 using Xunit;
 
-namespace DbUpX.Tests
+namespace DbUpZen.Tests
 {
     public class IntegrationTests
     {

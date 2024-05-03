@@ -3,7 +3,7 @@ using DbUp.Engine.Output;
 using DbUp.Engine.Transactions;
 using DbUp.SqlServer;
 
-namespace DbUpX
+namespace DbUpZen
 {
     /// <summary>
     /// Implements <see cref="DbUp.Engine.IJournal"/> to store hashed script

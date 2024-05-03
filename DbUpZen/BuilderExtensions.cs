@@ -5,7 +5,7 @@ using DbUp.Builder;
 using DbUp.Engine;
 using DbUp.Support;
 
-namespace DbUpX
+namespace DbUpZen
 {
     public static class BuilderExtensions
     {

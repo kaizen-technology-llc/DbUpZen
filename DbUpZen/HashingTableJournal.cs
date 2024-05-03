@@ -5,7 +5,7 @@ using DbUp.Engine;
 using DbUp.Engine.Output;
 using DbUp.Engine.Transactions;
 
-namespace DbUpX
+namespace DbUpZen
 {
     /// <summary>
     /// Base class for <see cref="IJournal"/> implementations that store a hash

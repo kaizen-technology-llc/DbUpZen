@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using DbUp.Engine;
 
-namespace DbUpX
+namespace DbUpZen
 {
     /// <summary>
     /// Extension methods for manipulating sequences of scripts. Useful in conjunction

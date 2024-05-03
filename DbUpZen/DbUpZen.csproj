@@ -7,12 +7,12 @@
     <Copyright>Copyright 2019 FISCAL Technologies Ltd</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
     <Owners>FISCAL Technologies Ltd</Owners>
-    <PackageProjectUrl>https://github.com/fiscaltec/DbUpX</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/kaizen-technology-llc/DbUpZen</PackageProjectUrl>
     <Summary>Extensions to DbUp supporting easy filtering, ordering and versioning.</Summary>
     <PackageTags>DbUp database upgrade scripts sql server</PackageTags>
-    <Title>DbUpX</Title>
+    <Title>DbUpZen</Title>
     <Description>Extensions to DbUp supporting easy filtering, ordering and versioning.</Description>
-    <PackageId>DbUpX</PackageId>
+    <PackageId>DbUpZen</PackageId>
     <PackageVersion>1.0.0.0</PackageVersion>
   </PropertyGroup>
 

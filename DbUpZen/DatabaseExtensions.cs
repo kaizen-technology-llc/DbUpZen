@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace DbUpX
+namespace DbUpZen
 {
     /// <summary>
     /// Provides a number of handy utility methods for running SQL commands and queries.

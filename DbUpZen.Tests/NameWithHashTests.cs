@@ -2,7 +2,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace DbUpX.Tests
+namespace DbUpZen.Tests
 {
     public class NameWithHashTests
     {

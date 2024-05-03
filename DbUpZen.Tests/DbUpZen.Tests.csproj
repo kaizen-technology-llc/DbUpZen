@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DbUpX\DbUpX.csproj" />
+    <ProjectReference Include="..\DbUpZen\DbUpZen.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="dbup-core">

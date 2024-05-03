@@ -9,7 +9,7 @@ using FluentAssertions;
 using Moq;
 using Xunit;
 
-namespace DbUpX.Tests
+namespace DbUpZen.Tests
 {
     public class FilterTests
     {

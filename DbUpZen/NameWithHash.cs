@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using DbUp.Engine;
 
-namespace DbUpX
+namespace DbUpZen
 {
     /// <summary>
     /// Defines a format for script names, "name#hash". This allows the DbUp engine

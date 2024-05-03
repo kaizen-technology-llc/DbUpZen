@@ -1,4 +1,4 @@
-# DbUpX
+# DbUpZen
 
 Extensions to [DbUp](https://github.com/DbUp/DbUp) supporting easy filtering, ordering
 and versioning:
@@ -117,7 +117,7 @@ long names prefixed with their namespaces.
 Then the custom filter expression passed to `JournalToSqlWithHashing` is able to
 identify and deal with the two subsets of scripts appropriately. It uses `WithPrefix`
 to find the `ByDate` scripts and orders them by name (i.e. by date) and then it finds
-the `Dependent` scripts and uses DbUpX's `OrderByDependency` feature to make sure they
+the `Dependent` scripts and uses DbUpZen's `OrderByDependency` feature to make sure they
 are ordered according to how they depend on one another.
 
 The `WithPrefix` actually removes the prefix from each script's name, so what is
@@ -162,7 +162,7 @@ so if you modify the database here then you mess up the order in which effects o
 You can *read* information from the database using the command factory provided,
 and use that information to influence the script you generate and return.
 
-Note that DbUpX provides some helpful extension methods that are like a minimal form
+Note that DbUpZen provides some helpful extension methods that are like a minimal form
 of the excellent [Dapper](https://github.com/StackExchange/Dapper) library, except
 they operate on `Func<IDbCommand>` to better fit in with DbUp.
 
